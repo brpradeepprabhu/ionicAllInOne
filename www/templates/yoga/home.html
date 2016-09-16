@@ -1,0 +1,38 @@
+<div ng-show="yoga.mainMenu" class="yogaMain">
+  <div class="row" ng-click="yoga.startBtnClick()">
+    <div class="responsive-circle nyc-circle balanced-bg padding">
+      <div class="circle-inner">START</div>
+    </div>
+
+  </div>
+  <div class="row">
+    <button class="col button button-positive yogaMain" style="margin-right: 15px"
+            ng-click="yoga.appBtnClick('yogaPoses')">
+      Poses
+    </button>
+    <button class="col  button button-positive padding yogaMain"  ng-click="yoga.appBtnClick('yogaSetting')">Settings</button>
+  </div>
+
+
+  <div class="row">
+
+    <button class="col button button-block button-positive yogaMain" style="margin-right: 15px"
+            ng-click="yoga.appBtnClick('home')">Home
+    </button>
+    <button class="col  button button-block button-positive yogaMain">Calendar</button>
+
+
+  </div>
+</div>
+
+<div ng-show="yoga.exerciseMenu">
+  <div class="row">
+    <img class="col-offset-25 col-50" ng-src="{{yoga.exercisePath}}" style="{{yoga.imageStyle}}" >
+  </div>
+
+  <div class="col-bottom">
+    <div class="exercise-circle balanced-bg padding">
+      <div class="circle-inner">{{yoga.timerInSec}}</div>
+    </div>
+  </div>
+</div>

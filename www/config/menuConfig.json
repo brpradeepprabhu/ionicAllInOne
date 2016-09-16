@@ -1,0 +1,38 @@
+{
+  "menu": {
+    "menuLevel1": [
+      {
+        "text": "AlarmClock",
+        "path": "img/home/alarmclock.png"
+      },
+      {
+        "text": "Life Remainder",
+        "path": "img/home/alarmclock.png"
+      },
+      {
+        "text": "Yoga",
+        "path": "img/home/yoga.png"
+      }
+    ],
+    "menuLevel2": [
+      {
+        "text": "Photo Editor",
+        "path": "img/home/alarmclock.png"
+      },
+      {
+        "text": "ToDo",
+        "path": "img/home/todo.png"
+      },
+      {
+        "text": "Weather",
+        "path": "img/home/weatherForecast.png"
+      }
+    ],
+    "menuLevel3": [
+      {
+        "text": "Horoscope",
+        "path": "img/home/weatherForecast.png"
+      }
+    ]
+  }
+}
