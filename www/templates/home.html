@@ -1,18 +1,21 @@
+<ion-view>
+<ion-content>
+  <div ng-repeat="menuLevel in home.menuData.menu">
+    <div class="row" >
 
-<div ng-repeat="menuLevel in home.menuData.menu">
-<div class="row responsive-sm" >
+      <div class="col-50 homeBorder text-center" ng-repeat="menu in menuLevel">
+        <div class="col" ng-click="home.menuClick(menu.text)">
+          <img ng-src="{{menu.path}}" class="image full-image" style="max-width: 128px;max-height: 128px">
 
-    <div class="col-33 homeBorder text-center" ng-repeat="menu in menuLevel">
-      <div class="col" ng-click="home.menuClick(menu.text)">
-        <img ng-src="{{menu.path}}" class="image full-image" style="max-width: 128px;max-height: 128px">
-
+        </div>
+        <div>
+          {{menu.text}}
+        </div>
       </div>
-      <div>
-        {{menu.text}}
-      </div>
+
+
     </div>
 
-
-</div>
-
-</div>
+  </div>
+</ion-content>
+</ion-view>

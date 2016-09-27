@@ -1,1 +1,41 @@
 /* Empty. Add your own CSS if you like */
+
+.startCircle {
+  position: absolute;
+  color: white;
+  margin-left: 33%;
+  margin-top: 15%;
+  width: 40vw;
+  height: 23vh;
+  text-align: center;
+  background-color: green;
+  border-radius: 50%;
+  border: 2px solid #387ef5;
+}
+
+.footerClass {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+}
+
+.startBtn {
+  position: relative;
+  margin-top: 43%;
+  font-size: 32px
+}
+.footerMain
+{
+  position: absolute;width: 100%;bottom:100px
+}
+
+@media (min-width: 768px) {
+  .startCircle {
+    height: 30vh;
+  }
+  .startBtn {
+    margin-top: 43%;
+    font-size: 56px
+  }
+ 
+}

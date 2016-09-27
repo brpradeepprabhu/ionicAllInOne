@@ -4,7 +4,7 @@
 (function () {
   var yogaConfig = function () {
     var config = {
-      restTime: 10,
+      restTime: 15,
       workOutTime: 10
     };
     return {

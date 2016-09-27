@@ -1,13 +1,25 @@
+<ion-view>
+  <ion-content>
+    <div style="">
 
-<div class="list">
+      
+      <div class=" list">
 
-  <a class="item item-avatar" ng-repeat="poses in yogaPoses.poses">
-    <img ng-src='img/yoga/{{poses.text}}.jpg'>
-    <h2>{{poses.sanskrit}}</h2>
-    <p>{{poses.text}}</p>
+      <a class="item item-avatar" ng-repeat="poses in yogaPoses.poses">
+        <img ng-src='img/yoga/{{poses.text}}.jpg'>
+        <h2>{{poses.sanskrit}}</h2>
+        <p>{{poses.text}}</p>
 
-  </a>
+      </a>
 
 
+    </div>
+    </div>
 
-</div>
+    
+  </ion-content>
+  <div class="bar bar-footer bar-positive tabs">
+        <a class="tab-item" href="#/yoga"><i class="icon ion-home"></i></a>
+
+      </div>
+</ion-view>

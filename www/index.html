@@ -1,109 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <style>
-      .homeBorder
-      {
-        border: 1px solid black;
-        padding: 10px;
-      }
-      .responsive-circle {
-        font-size: 32px;
-        font-weight: 700;
-        margin: 0 auto 20px;
-        width: 30%;
-        border-radius: 50%;
-      }
-      .responsive-circle::after {
-        border-radius: 50%;
-        content: "";
-        display: block;
-        height: 0;
-        margin-bottom: 20px;
-        padding-bottom: 100%;
-        width: 100%;
-      }
-      .responsive-circle div {
-        color: white;
-        float: left;
-        line-height: 1em;
-        margin-top: -0.5em;
-        padding-top: 50%;
-        text-align: center;
-        width: 100%;
-      }
-      .yogaMain
-      {
-        position: relative;
-        font-weight: 500;
-
-      }
-      .exercise-circle {
-        font-size: 32px;
-        font-weight: 700;
-        margin: 0 auto 20px;
-        width: 20%;
-        border-radius: 50%;
-      }
-      .exercise-circle::after {
-        border-radius: 50%;
-        content: "";
-        display: block;
-        height: 0;
-        margin-bottom: 20px;
-        padding-bottom: 100%;
-        width: 100%;
-      }
-      .exercise-circle div {
-        color: white;
-        float: left;
-        line-height: 1em;
-        margin-top: -0.5em;
-        padding-top: 50%;
-        text-align: center;
-        width: 100%;
-      }
-    </style>
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/module.js"></script>
-    <script src="js/yoga/factory/posesFactory.js"></script>
-    <script src="js/controller/homeController.js"></script>
-    <script src="js/yoga/controller/yogaController.js"></script>
-    <script src="js/yoga/controller/yogaPosesController.js"></script>
-
-    <script src=""></script>
-  </head>
-  <body ng-app="AllInOne">
-
-    <ion-pane>
-      <ion-header-bar class="bar-header bar-positive bar-stable">
-        <h1 class="title">All In One</h1>
-      </ion-header-bar>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .homeBorder div img {
+      box-shadow: 2px 2px 2px 2px lightgrey;
+      padding: 10px;
+      
+    }
 
 
-        <ion-content>
-          <div ui-view="">
+  </style>
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
 
-          </div>
-        </ion-content>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
 
-    </ion-pane>
-  </body>
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/module.js"></script>
+  <script src="js/yoga/factory/posesFactory.js"></script>
+  <script src="js/yoga/factory/yogaConfig.js"></script>
+  <script src="js/controller/homeController.js"></script>
+  <script src="js/yoga/controller/yogaController.js"></script>
+  <script src="js/yoga/controller/yogaPosesController.js"></script>
+  <script src="js/yoga/controller/yogaPosesSetting.js"></script>
+  <script src="js/yoga/directive/yogaTemplate.js"></script>
+
+  <script src=""></script>
+</head>
+<body ng-app="AllInOne">
+
+<ion-pane>
+  <ion-header-bar class="bar-header bar-positive bar-stable">
+    <h1 class="title">All In One</h1>
+  </ion-header-bar>
+  <ion-nav-view></ion-nav-view>
+
+
+</ion-pane>
+</body>
 </html>

@@ -3,21 +3,26 @@
  */
 
 (function () {
-  var yogaPosesSetting = function ($state, $posesFactory) {
+  var yogaPosesSetting = function (scope, state, yogaConfig) {
     var vm = this;
-    vm.state = $state;
-    vm.poses = $posesFactory.poses;
-    console.log(vm.poses)
+    this.yogaConfig = yogaConfig.config;
+    this.workOutTime = this.yogaConfig.workOutTime;
+    this.restTime = this.yogaConfig.restTime;
+    this.state = state;
+
   };
   var p = yogaPosesSetting.prototype;
-  p.appBtnClick = function (name) {
-
-    this.state.go(name);
-
-
+  p.saveClick = function () {
+    this.yogaConfig.workOutTime = this.workOutTime;
+    this.yogaConfig.restTime = this.restTime;
+    this.state.go("yoga")
+  };
+  p.cancelClick = function () {
+    this.state.go("yoga")
   };
 
-  angular.module('yoga').controller("yogaPosesSetting", yogaPosesSetting);
-  yogaPosesSetting.$inject = ['$state', 'posesFactory'];
 
-}());
+  angular.module('yoga').controller("yogaPosesSetting", yogaPosesSetting);
+  yogaPosesSetting.$inject = ['$scope', '$state', 'yogaConfig']
+
+} ());

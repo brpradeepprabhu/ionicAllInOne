@@ -1,8 +1,21 @@
-<div class="list">
-  <div class="item">
-     <label for="workOutTime">WorkOut Time
-      <input type="text" class="item" id="workOutTime">
-     </label>
+<ion-view>
+  <ion-content>
 
-  </div>
-</div>
+    <div class="row">
+      <label for="workOutTime" class="col-50">WorkOut Time</label>
+      <input type="text" class="col-50" id="workOutTime"  ng-model="yogaSetting.workOutTime">
+
+    </div>
+    <div class="row">
+      <label for="restTime" class="col-50">Rest Time </label>
+      <input type="text" class="col-50" id="restTime" ng-model="yogaSetting.restTime">
+
+
+    </div>
+    <div class="row" style="margin-top:5%" >
+      <button class="col-offset-25 col-20 button button-positive" ng-click="yogaSetting.saveClick()">Save</button>
+      <button class="col-offset-10 col-20 button button-positive" ng-click="yogaSetting.cancelClick()">Cancel</button>
+     
+    </div>
+  </ion-content>
+</ion-view>`
