@@ -5,7 +5,7 @@
 
   var posesFactory = function () {
     var poses = [
-      {"text": "Bharadvaja’s Twist","sanskrit":"Bharadvajasana I"},
+      {"text": "BharadvajasTwist","sanskrit":"Bharadvajasana I"},
       {"text": "Big Toe Pose","sanskrit":"Padangusthasana"},
       {"text": "Bridge Pose","sanskrit":"Setu Bandha Sarvangasana"},
       {"text": "Cat Pose","sanskrit":"Marjaryasana"},

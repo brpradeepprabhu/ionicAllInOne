@@ -7,8 +7,13 @@
       restTime: 15,
       workOutTime: 10
     };
+    var completedYoga = [
+      {title: 'NY', date: new Date([2016, 9, 24])},
+      {title: 'ID', date: new Date([2015, 6, 4])}
+    ];
     return {
-      config: config
+      config: config,
+      completedYoga:completedYoga
     };
   };
   angular.module('yoga').factory("yogaConfig", yogaConfig);

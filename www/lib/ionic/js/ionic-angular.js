@@ -141,7 +141,7 @@ function($rootScope, $compile, $animate, $timeout, $ionicTemplateLoader, $ionicP
     textForIcon(scope.cancelText);
     textForIcon(scope.destructiveText);
 
-    // Compile the templates
+    // Compile the template
     var element = scope.element = $compile('<ion-action-sheet ng-class="cssClass" buttons="buttons"></ion-action-sheet>')(scope);
 
     // Grab the sheet element for animation
@@ -912,7 +912,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
 
       } else {
 
-        // create an element from the viewLocals templates
+        // create an element from the viewLocals template
         ele = $ionicViewSwitcher.createViewEle(viewLocals);
         if (this.isAbstractEle(ele, viewLocals)) {
           return {
@@ -2273,8 +2273,8 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
      * it will set the options given and keep the indicator shown.
      * @returns {promise} A promise which is resolved when the loading indicator is presented.
      * @param {object} opts The options for the loading indicator. Available properties:
-     *  - `{string=}` `templates` The html content of the indicator.
-     *  - `{string=}` `templateUrl` The url of an html templates to load as the content of the indicator.
+     *  - `{string=}` `template` The html content of the indicator.
+     *  - `{string=}` `templateUrl` The url of an html template to load as the content of the indicator.
      *  - `{object=}` `scope` The scope to be a child of. Default: creates a child of $rootScope.
      *  - `{boolean=}` `noBackdrop` Whether to hide the backdrop. By default it will be shown.
      *  - `{boolean=}` `hideOnStateChange` Whether to hide the loading spinner when navigating
@@ -2343,7 +2343,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
               $compile(loading.contents())(self.scope);
             }
 
-            //Don't show until templates changes
+            //Don't show until template changes
             if (self.isShown) {
               self.element.addClass('visible');
               ionic.requestAnimationFrame(function() {
@@ -2719,7 +2719,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
       $hasTabsTop: false
     });
 
-    // Compile the templates
+    // Compile the template
     var element = $compile('<ion-' + options.viewType + '>' + templateString + '</ion-' + options.viewType + '>')(scope);
 
     options.$el = element;
@@ -2759,7 +2759,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
     /**
      * @ngdoc method
      * @name $ionicModal#fromTemplate
-     * @param {string} templateString The templates string to use as the modal's
+     * @param {string} templateString The template string to use as the modal's
      * content.
      * @param {object} options Options to be passed {@link ionic.controller:ionicModal#initialize ionicModal#initialize} method.
      * @returns {object} An instance of an {@link ionic.controller:ionicModal}
@@ -2772,7 +2772,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
     /**
      * @ngdoc method
      * @name $ionicModal#fromTemplateUrl
-     * @param {string} templateUrl The url to load the templates from.
+     * @param {string} templateUrl The url to load the template from.
      * @param {object} options Options to be passed {@link ionic.controller:ionicModal#initialize ionicModal#initialize} method.
      * options object.
      * @returns {promise} A promise that will be resolved with an instance of
@@ -3261,7 +3261,7 @@ function($ionicModal, $ionicPosition, $document, $window) {
     /**
      * @ngdoc method
      * @name $ionicPopover#fromTemplate
-     * @param {string} templateString The templates string to use as the popovers's
+     * @param {string} templateString The template string to use as the popovers's
      * content.
      * @param {object} options Options to be passed to the initialize method.
      * @returns {object} An instance of an {@link ionic.controller:ionicPopover}
@@ -3273,7 +3273,7 @@ function($ionicModal, $ionicPosition, $document, $window) {
     /**
      * @ngdoc method
      * @name $ionicPopover#fromTemplateUrl
-     * @param {string} templateUrl The url to load the templates from.
+     * @param {string} templateUrl The url to load the template from.
      * @param {object} options Options to be passed to the initialize method.
      * @returns {promise} A promise that will be resolved with an instance of
      * an {@link ionic.controller:ionicPopover} controller (ionicPopover is built on top of $ionicPopover).
@@ -3435,8 +3435,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   templates: '', // String (optional). The html templates to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup   body.
+     *   template: '', // String (optional). The html template to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
      *   scope: null, // Scope (optional). A scope to link to the popup content.
      *   buttons: [{ // Array[Object] (optional). Buttons to place in the popup footer.
      *     text: 'Cancel',
@@ -3474,8 +3474,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   templates: '', // String (optional). The html templates to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup   body.
+     *   template: '', // String (optional). The html template to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
      *   okText: '', // String (default: 'OK'). The text of the OK button.
      *   okType: '', // String (default: 'button-positive'). The type of the OK button.
      * }
@@ -3503,8 +3503,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   templates: '', // String (optional). The html templates to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup   body.
+     *   template: '', // String (optional). The html template to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
      *   cancelText: '', // String (default: 'Cancel'). The text of the Cancel button.
      *   cancelType: '', // String (default: 'button-default'). The type of the Cancel button.
      *   okText: '', // String (default: 'OK'). The text of the OK button.
@@ -3528,7 +3528,7 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      * ```javascript
      *  $ionicPopup.prompt({
      *    title: 'Password Check',
-     *    templates: 'Enter your secret password',
+     *    template: 'Enter your secret password',
      *    inputType: 'password',
      *    inputPlaceholder: 'Your password'
      *  }).then(function(res) {
@@ -3542,8 +3542,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   templates: '', // String (optional). The html templates to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup body.
+     *   template: '', // String (optional). The html template to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup body.
      *   inputType: // String (default: 'text'). The type of input to use
      *   defaultText: // String (default: ''). The initial value placed into the input.
      *   maxLength: // Integer (default: null). Specify a maxlength attribute for the input.
@@ -4521,7 +4521,7 @@ function($compile, $controller, $http, $q, $rootScope, $templateCache) {
       var controller;
       var scope = options.scope || $rootScope.$new();
 
-      //Incase templates doesn't have just one root element, do this
+      //Incase template doesn't have just one root element, do this
       var element = jqLite('<div>').html(template).contents();
 
       if (options.controller) {
@@ -4668,7 +4668,7 @@ function($timeout, $document, $q, $ionicClickBlock, $ionicConfig, $ionicNavBarDe
 
           if (!alreadyInDom) {
             // still no existing element to use
-            // create it using existing templates/scope/locals
+            // create it using existing template/scope/locals
             enteringEle = registerData.ele || ionicViewSwitcher.createViewEle(viewLocals);
 
             // existing elements in the DOM are looked up by their state name and state id

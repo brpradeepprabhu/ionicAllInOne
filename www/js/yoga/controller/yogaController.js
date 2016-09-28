@@ -32,15 +32,16 @@
     this.timerInSec = this.yogaConfig.config.workOutTime;
     this.restTime = this.yogaConfig.config.restTime;
     this.exerciseMenu = true;
-    this.exercisePath = "img/yoga/" + this.posesFactory[this.imageNode].text + ".jpg";  
+    console.log(this.posesFactory[this.imageNode].text);
+    this.exercisePath = "img/yoga/" + this.posesFactory[this.imageNode].text + ".png";  
   
     this.imageStyle = "max-height:" + window.innerHeight * 0.5 + "px !important;" + "margin-top:5%";
     this.restStyle = "max-height:" + window.innerHeight * 0.3 + "px !important" + "";
     var currentScope = this;
      this.nextExercise = this.posesFactory[this.imageNode].sanskrit;
     this.timer = window.setInterval(function () {
-      currentScope.timerChange.apply(currentScope)
-    }, 1000)
+      currentScope.timerChange.apply(currentScope);
+    }, 1000);
 
   };
   p.startRestTime = function () {
@@ -65,15 +66,25 @@
         this.timerInSec = this.restTime;
         this.exerciseMenu = false;
         this.nextExercise = this.posesFactory[this.imageNode].sanskrit;
-        this.exercisePath = "img/yoga/" + this.posesFactory[this.imageNode].text + ".jpg";
+        this.exercisePath = "img/yoga/" + this.posesFactory[this.imageNode].text + ".png";
         this.timer = window.setInterval(function () {
-          currentScope.startRestTime.apply(currentScope)
+          currentScope.startRestTime.apply(currentScope);
         }, 1000);
 
         console.log(this.imageNode);
       }
       else {
-        alert("you completed your workout")
+        var date = new Date();
+        var y = date.getFullYear();
+        var m = date.getMonth();
+        var d = date.getDate();
+      
+        var completedObj = {
+          title :"completedEvent",
+          date: new Date([y,m, d])
+        };
+        yogaConfig.completedYoga.push(completedObj);
+
       }
     }
 
