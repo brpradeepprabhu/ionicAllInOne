@@ -1,21 +1,22 @@
 <ion-view>
-  <ion-content>
+  <div class="verticall-content">
+    <div class="verticalAlignContent">
+      <div class="list">
+        <label class="item-input row"><span class="col-50">WorkOut Time</span>
+   <input type="number" class="col-50" id="workOutTime"  ng-model="yogaSetting.workOutTime">
+   </label>
 
-    <div class="row">
-      <label for="workOutTime" class="col-50">WorkOut Time</label>
-      <input type="text" class="col-50" id="workOutTime"  ng-model="yogaSetting.workOutTime">
+        <label class="item item-input row"><span class="col-50">Rest Time</span>
+    <input type="number" class="col-50" id="restTime" ng-model="yogaSetting.restTime">
 
+   </label>
+      </div>
+
+      <div class="row" style="margin-top:5%">
+        <button class="col-offset-10 col-34 button button-positive" ng-click="yogaSetting.saveClick()">Save</button>
+        <button class="col-offset-10 col-34 button button-positive" ng-click="yogaSetting.cancelClick()">Cancel</button>
+
+      </div>
     </div>
-    <div class="row">
-      <label for="restTime" class="col-50">Rest Time </label>
-      <input type="text" class="col-50" id="restTime" ng-model="yogaSetting.restTime">
-
-
-    </div>
-    <div class="row" style="margin-top:5%" >
-      <button class="col-offset-25 col-20 button button-positive" ng-click="yogaSetting.saveClick()">Save</button>
-      <button class="col-offset-10 col-20 button button-positive" ng-click="yogaSetting.cancelClick()">Cancel</button>
-     
-    </div>
-  </ion-content>
+  </div>
 </ion-view>`
