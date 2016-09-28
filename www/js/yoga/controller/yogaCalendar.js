@@ -3,6 +3,7 @@
       
         $scope.eventClick = function () {};
         $scope.events = yogaConfig.completedYoga;
+
         $scope.calendarOptions = {
             defaultDate: new Date(),
             minDate: new Date([2010, 12, 31]),

@@ -5,7 +5,7 @@
   var yogaConfig = function () {
     var config = {
       restTime: 15,
-      workOutTime: 10
+      workOutTime: 35
     };
     var completedYoga = [
       {title: 'NY', date: new Date([2016, 9, 24])},

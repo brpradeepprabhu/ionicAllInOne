@@ -1,51 +1,68 @@
 <ion-view>
 
-  <ion-content>
 
-    <div ng-show="yoga.mainMenu" class="">
-      <div class="row" ng-click="yoga.startBtnClick()">
+    <div ng-show="yoga.completedToday" class="">
+      <div class="row">
         <!--<div class="responsive-circle nyc-circle balanced-bg padding">-->
         <!--<div class="circle-inner">START</div>-->
         <!--</div>-->
-        <div class="startCircle">
-          <div class="startBtn">start</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div ng-show="yoga.exerciseMenu">
-      <div class="row">
-        <div class="col dark-bg padding text-center" style="color:white;margin:0;left:0">{{yoga.nextExercise}}</div>
-      </div>
-      <div class="row">
-        <img class="col-offset-10 col-80" ng-src="{{yoga.exercisePath}}" style="{{yoga.imageStyle}}">
-      </div>
-      <div class="row">
-        <div class="col-bottom">
-          <div class="positive-bg startCircle">
-            <div class="startBtn">{{yoga.timerInSec}}</div>
+        <div class="verticall-content">
+          <div class="verticalAlignContent">
+            <div class="completedText">You have completed the yoga exercise</div>
           </div>
         </div>
-      </div>
+        <div class="bar bar-footer bar-positive tabs" ng-click = "yoga.reloadFn()">
+          <a class="tab-item"><i class="icon ion-home"></i></a>
 
-
-    </div>
-    <div ng-show="!yoga.exerciseMenu && yoga.restHolder" id="restElement">
-      <div class="row">
-        <div class="col dark-bg text-center padding" style="color:white">Rest Time</div>
-      </div>
-      <div class="row">
-        <div class="col-top">
-          <div class="positive-bg startCircle">
-            <div class="startBtn">{{yoga.timerInSec}}</div>
-          </div>        
         </div>
       </div>
-    
 
     </div>
-  </ion-content>
+ 
+  <div ng-show="yoga.mainMenu" class="">
+    <div class="row" ng-click="yoga.startBtnClick()">
+      <!--<div class="responsive-circle nyc-circle balanced-bg padding">-->
+      <!--<div class="circle-inner">START</div>-->
+      <!--</div>-->
+      <div class="startCircle">
+        <div class="startBtn">start</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div ng-show="yoga.exerciseMenu">
+    <div class="row">
+      <div class="col dark-bg padding text-center" style="color:white;margin:0;left:0">{{yoga.nextExercise}}</div>
+    </div>
+    <div class="row">
+      <img class="col-offset-10 col-80" ng-src="{{yoga.exercisePath}}" style="{{yoga.imageStyle}}">
+    </div>
+    <div class="row">
+      <div class="col-bottom">
+        <div class="positive-bg startCircle">
+          <div class="startBtn">{{yoga.timerInSec}}</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div ng-show="!yoga.exerciseMenu && yoga.restHolder" id="restElement">
+    <div class="row">
+      <div class="col dark-bg text-center padding" style="color:white">Rest Time</div>
+    </div>
+    <div class="row">
+      <div class="col-top">
+        <div class="positive-bg startCircle">
+          <div class="startBtn">{{yoga.timerInSec}}</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
   <div class="bar-footer footerClass" ng-show="!yoga.exerciseMenu && yoga.restHolder ">
     <div class="row">
       <button class="button button-block button-positive yogaMain" ng-click="yoga.restTimeCancel()">{{yoga.nextExercise}}</button>

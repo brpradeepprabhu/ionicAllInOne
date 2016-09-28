@@ -5,7 +5,7 @@
 
   var yogaController = function ($state, $scope, posesFactory, yogaConfig) {
     var vm = this;
-
+    this.yogaConfig = yogaConfig;
     vm.state = $state;
     vm.mainMenu = true;
     vm.exerciseMenu = false;
@@ -16,7 +16,7 @@
     vm.imageStyle = "position:relative";
     vm.scope = $scope;
     vm.restHolder = false;
-
+    vm.completedToday = false;
   };
   var p = yogaController.prototype;
   p.appBtnClick = function (name) {
@@ -33,12 +33,12 @@
     this.restTime = this.yogaConfig.config.restTime;
     this.exerciseMenu = true;
     console.log(this.posesFactory[this.imageNode].text);
-    this.exercisePath = "img/yoga/" + this.posesFactory[this.imageNode].text + ".png";  
-  
+    this.exercisePath = "img/yoga/" + this.posesFactory[this.imageNode].text + ".png";
+
     this.imageStyle = "max-height:" + window.innerHeight * 0.5 + "px !important;" + "margin-top:5%";
     this.restStyle = "max-height:" + window.innerHeight * 0.3 + "px !important" + "";
     var currentScope = this;
-     this.nextExercise = this.posesFactory[this.imageNode].sanskrit;
+    this.nextExercise = this.posesFactory[this.imageNode].sanskrit;
     this.timer = window.setInterval(function () {
       currentScope.timerChange.apply(currentScope);
     }, 1000);
@@ -54,6 +54,17 @@
       this.startBtnClick();
     }
     this.scope.$apply();
+  };
+  p.reloadFn = function () {
+    var vm = this;
+    vm.mainMenu = true;
+    vm.exerciseMenu = false;
+    vm.posesLength = vm.posesFactory.length - 1;
+    vm.imageNode = 0;
+    vm.imageStyle = "position:relative";
+    vm.restHolder = false;
+    vm.completedToday = false;
+
   };
   p.timerChange = function () {
     if (this.timerInSec > 1) {
@@ -72,18 +83,21 @@
         }, 1000);
 
         console.log(this.imageNode);
-      }
-      else {
+      } else {
         var date = new Date();
         var y = date.getFullYear();
         var m = date.getMonth();
         var d = date.getDate();
-      
+        this.restHolder = false;
+        this.completedToday = true;
+        this.mainMenu = false;
+        this.exerciseMenu = false;
+
         var completedObj = {
-          title :"completedEvent",
-          date: new Date([y,m, d])
+          title: "completedEvent",
+          date: new Date([y, m + 1, d])
         };
-        yogaConfig.completedYoga.push(completedObj);
+        this.yogaConfig.completedYoga.push(completedObj);
 
       }
     }
@@ -95,4 +109,4 @@
 
   angular.module('yoga').controller("yogaController", yogaController);
   yogaController.$inject = ['$state', '$scope', 'posesFactory', 'yogaConfig'];
-} ());
+}());

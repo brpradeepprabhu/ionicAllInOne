@@ -7,7 +7,7 @@
     var poses = [
       {"text": "BharadvajasTwist","sanskrit":"Bharadvajasana I"},
       {"text": "Big Toe Pose","sanskrit":"Padangusthasana"},
-      {"text": "Bridge Pose","sanskrit":"Setu Bandha Sarvangasana"},
+     {"text": "Bridge Pose","sanskrit":"Setu Bandha Sarvangasana"},
       {"text": "Cat Pose","sanskrit":"Marjaryasana"},
       {"text": "Chair Pose","sanskrit":"Utkatasana"},
       {"text": "Cow Pose","sanskrit":"Bitilasana"},
@@ -39,7 +39,7 @@
     ];
     return {
       poses: poses
-    }
+    };
   };
   angular.module('yoga').factory("posesFactory", posesFactory);
 

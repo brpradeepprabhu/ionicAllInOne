@@ -8,7 +8,7 @@
     var vm = this;
     vm.state = $state;
     vm.poses = $posesFactory.poses;
-    console.log(vm.poses)
+    console.log(vm.poses);
   };
 
   var p = yogaPosesController.prototype;
