@@ -22,7 +22,7 @@
       {"text": "Half Frog Pose","sanskrit":"Ardha Bhekasana"},
       {"text": "Half Lord of the Fishes Pose","sanskrit":"Ardha Matsyendrasana"},
       {"text": "Locust Pose","sanskrit":"Salabhasana"},
-      {"text": "Marichi’s Pose","sanskrit":"Marichyasana III"},
+      {"text": "Marichi Pose","sanskrit":"Marichyasana III"},
       {"text": "Mountain Pose","sanskrit":"Tadasana"},
       {"text": "Pigeon Pose","sanskrit":"Kapotasana"},
       {"text": "Side Crane (Crow) Pose","sanskrit":"Parsva Bakasana"},

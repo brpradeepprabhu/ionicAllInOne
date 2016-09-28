@@ -17,6 +17,7 @@
     vm.scope = $scope;
     vm.restHolder = false;
     vm.completedToday = false;
+    vm.sound = document.getElementById("buzzer");
   };
   var p = yogaController.prototype;
   p.appBtnClick = function (name) {
@@ -38,6 +39,7 @@
     this.imageStyle = "max-height:" + window.innerHeight * 0.5 + "px !important;" + "margin-top:5%";
     this.restStyle = "max-height:" + window.innerHeight * 0.3 + "px !important" + "";
     var currentScope = this;
+    this.sound.play(0);
     this.nextExercise = this.posesFactory[this.imageNode].sanskrit;
     this.timer = window.setInterval(function () {
       currentScope.timerChange.apply(currentScope);
@@ -77,9 +79,12 @@
         this.timerInSec = this.restTime;
         this.exerciseMenu = false;
         this.nextExercise = this.posesFactory[this.imageNode].sanskrit;
+        this.sound.play(0);
         this.exercisePath = "img/yoga/" + this.posesFactory[this.imageNode].text + ".png";
         this.timer = window.setInterval(function () {
+           
           currentScope.startRestTime.apply(currentScope);
+
         }, 1000);
 
         console.log(this.imageNode);
@@ -92,7 +97,6 @@
         this.completedToday = true;
         this.mainMenu = false;
         this.exerciseMenu = false;
-
         var completedObj = {
           title: "completedEvent",
           date: new Date([y, m + 1, d])
